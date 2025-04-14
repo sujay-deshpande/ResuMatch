@@ -23,9 +23,7 @@ const config: Config = {
         xs: '2px',
         lg: '16px',
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      },
+      
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

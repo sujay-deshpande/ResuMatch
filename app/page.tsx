@@ -296,7 +296,7 @@ export default function Home() {
             <span>Drag & drop or browse</span>
           </>
         ) : (
-          <span>{resumes[person].file.name}</span>
+          <span>{resumes[person]?.file?.name}</span>
         )}
       </div>
     </div>
@@ -361,7 +361,7 @@ export default function Home() {
           <MotionButton
             onClick={analyzeResumes}
             disabled={loading}
-            size="xl"
+            size="lg"
             className="rounded-full px-12 py-7 text-lg bg-gradient-to-r from-pink-600 to-blue-600 hover:from-pink-700 hover:to-blue-700 shadow-lg hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -415,7 +415,7 @@ export default function Home() {
                           <Progress 
                             value={result.matchScore} 
                             className="h-3 bg-gray-100 dark:bg-gray-700"
-                            indicatorClassName="bg-pink-600"
+                            // indicatorClassName="bg-pink-600"
                           />
                           <div className="mt-4 text-4xl font-bold text-pink-600">
                             {result.matchScore}%
@@ -434,7 +434,7 @@ export default function Home() {
                           <Progress 
                             value={result.referralScore} 
                             className="h-3 bg-gray-100 dark:bg-gray-700"
-                            indicatorClassName="bg-blue-600"
+                            // indicatorClassName="bg-blue-600"
                           />
                           <div className="mt-4 text-4xl font-bold text-blue-600">
                             {result.referralScore}%
