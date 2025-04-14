@@ -66,7 +66,10 @@ export default function Home() {
     return text;
   };
   const readLeetcode = async (username: string) => {
-    const response = await fetch(`https://alfa-leetcode-api.onrender.com/${username}`);
+    const response = await fetch(`https://alfa-leetcode-api.onrender.com/${username}`, {
+      cache: "no-store",
+    });
+    
     const data = await response.json();
     return data;
   };
