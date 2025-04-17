@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Upload, Heart, Briefcase, ArrowRight, Linkedin, Github, Code, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -20,6 +20,7 @@ import HomeHeader from "@/components/HomeHeader"
 if (typeof window !== "undefined") {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 }
+
 
 type ResumeData = {
   file: File | null;
@@ -53,6 +54,14 @@ export default function Home() {
   } | null>(null);
 
   const { toast } = useToast();
+
+  useEffect(() => {
+    window.addEventListener("error", (e) => {
+      if (e.message.includes("ChunkLoadError")) {
+        window.location.reload();
+      }
+    });
+  }, []);
 
   const readPDF = async (file: File) => {
     const arrayBuffer = await file.arrayBuffer();

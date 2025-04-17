@@ -16,7 +16,6 @@
 // };
 
 // module.exports = nextConfig;
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -26,6 +25,14 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.alias.canvas = false;
     config.resolve.alias.encoding = false;
+
+    // 🔧 Disable Webpack chunk splitting
+    config.optimization.splitChunks = {
+      cacheGroups: {
+        default: false,
+      },
+    };
+
     return config;
   },
   experimental: {
