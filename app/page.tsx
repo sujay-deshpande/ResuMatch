@@ -62,6 +62,10 @@ export default function Home() {
       }
     });
   }, []);
+  useEffect(()=>{
+    console.info("Disclaimer: This result is not an official assessment. The score is not guaranteed and is for entertainment and educational purposes only. No legal or career decisions should be made based on this analysis.");
+
+  },[])
 
   const readPDF = async (file: File) => {
     const arrayBuffer = await file.arrayBuffer();
@@ -503,6 +507,10 @@ export default function Home() {
               </MotionCard>
             </motion.div>
           )}
+          <p className="sr-only">
+  Disclaimer: This result is not an official assessment. The score is not guaranteed and is for entertainment and educational purposes only. No legal or career decisions should be made based on this analysis.
+</p>
+
         </AnimatePresence>
       </div>
     </div>
