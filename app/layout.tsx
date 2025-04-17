@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'ResuMatch: Corporate Love',
+  title: 'ResuMatch: Professionalism Matching',
   description: 'ResuMatch is a fun project that playfully matches your resume and skills with your crush’s to see how compatible you’d be in the corporate world.',
   icons: {
     icon: '/logo.ico', // relative to /public
